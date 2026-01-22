@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data entry</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>نموذج إدخال البيانات</h1>
+        <form id="dataForm">
+            <!-- اسم المستخدم -->
+            <label for="name">User:</label>
+            <input type="text" id="name" name="name" required>
+
+            <!-- البريد الإلكتروني -->
+            <label for="email">Mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- القسم -->
+            <label for="department">Section:</label>
+            <select id="department" name="department" required>
+                <option value="">Choose Section</option>
+                <option value="الهندسة">الهندسة</option>
+                <option value="الصيانة">الصيانة</option>
+                <option value="الجودة">الجودة</option>
+            </select>
+
+            <!-- نوع العيب -->
+            <label for="issueType">نوع العيب:</label>
+            <select id="issueType" name="issueType" required>
+                <option value="">اختر نوع العيب</option>
+                <option value="ضغط منخفض">ضغط منخفض</option>
+                <option value="كسر">كسر</option>
+                <option value="صوت">صوت</option>
+            </select>
+
+            <!-- حقل إضافي يظهر حسب نوع العيب -->
+            <div id="extraField" style="display:none;">
+                <label for="device">الجهاز المتأثر:</label>
+                <input type="text" id="device" name="device">
+            </div>
+
+            <!-- التاريخ -->
+            <label for="date">التاريخ:</label>
+            <input type="date" id="date" name="date" required>
+
+            <!-- رفع صورة -->
+            <label for="image">رفع صورة:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+
+            <!-- زر الإرسال -->
+            <button type="submit">إرسال البيانات</button>
+        </form>
+        <div id="message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
