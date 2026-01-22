@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // رابط Google Web App النهائي
     const GOOGLE_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzr0LGKZlPwrylvfnC-zjmUgaqfLue-60l9a97okM9qIIvt4qfBARzKh0uA0dJR0L_g/exec";
 
+
     // إظهار الحقل الإضافي إذا اخترنا "ضغط منخفض"
     issueType.addEventListener('change', () => {
         extraField.style.display = (issueType.value === 'ضغط منخفض') ? 'block' : 'none';
@@ -50,5 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
 
 
