@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // رابط Google Web App النهائي
     const GOOGLE_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzr0LGKZlPwrylvfnC-zjmUgaqfLue-60l9a97okM9qIIvt4qfBARzKh0uA0dJR0L_g/exec";
 
-
     // إظهار الحقل الإضافي إذا اخترنا "ضغط منخفض"
     issueType.addEventListener('change', () => {
         extraField.style.display = (issueType.value === 'ضغط منخفض') ? 'block' : 'none';
@@ -16,6 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // إرسال البيانات للـ Google Sheets
     form.addEventListener('submit', async (e) => {
         e.preventDefault(); // يمنع تغيير الرابط
+
+        // --- رسالة تأكيد JS شغال ---
+        alert("JS شغال!"); 
 
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
@@ -33,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             const result = await response.json();
-            console.log(result);
+            console.log("Web App Response:", result);
 
             if(result.result === "success"){
                 message.textContent = "✅ تم إرسال البيانات بنجاح!";
@@ -51,6 +53,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-
-
