@@ -25,14 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch(GOOGLE_WEB_APP_URL, {
                 method: "POST",
-                mode: "cors", // مهم للاتصال من صفحة HTML
+                mode: "cors",
                 cache: "no-cache",
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(data)
             });
 
             const result = await response.json();
-            console.log(result); // تشخيص المشكلة لو حدث خطأ
+            console.log(result);
 
             if(result.result === "success"){
                 message.textContent = "✅ تم إرسال البيانات بنجاح!";
